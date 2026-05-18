@@ -8,3 +8,6 @@ myProject/
 myProjectCopy/
 newProject/
 newProjectCopy/
+
+# override global .gitignore and include node_modules
+!node_modules
