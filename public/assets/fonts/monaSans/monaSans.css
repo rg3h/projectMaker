@@ -1,0 +1,55 @@
+/** monaSans.css **/
+
+@font-face {
+  font-family: 'monaSansExtraBold';
+  font-style: normal;
+  font-weight: 800;
+  font-width: 100;
+  src: url('./Mona-Sans.woff2') format('woff2 supports variations'),
+       url('./Mona-Sans.woff2') format('woff2-variations');
+}
+
+@font-face {
+  font-family: 'monaSansBold';
+  font-style: normal;
+  font-weight: 700;
+  font-width: 100;
+  src: url('./Mona-Sans.woff2') format('woff2 supports variations'),
+       url('./Mona-Sans.woff2') format('woff2-variations');
+}
+
+@font-face {
+  font-family: 'monaSansMedium';
+  font-style: normal;
+  font-weight: 500;
+  font-width: 100;
+  src: url('./Mona-Sans.woff2') format('woff2 supports variations'),
+       url('./Mona-Sans.woff2') format('woff2-variations');
+}
+
+@font-face {
+  font-family: 'monaSans';
+  font-style: normal;
+  font-weight: 400;
+  font-width: 100;
+  src: url('./Mona-Sans.woff2') format('woff2 supports variations'),
+       url('./Mona-Sans.woff2') format('woff2-variations');
+}
+
+@font-face {
+  font-family: 'monaSansLight';
+  font-style: normal;
+  font-weight: 300;
+  font-width: 100;
+  src: url('./Mona-Sans.woff2') format('woff2 supports variations'),
+       url('./Mona-Sans.woff2') format('woff2-variations');
+}
+
+@font-face {
+  font-family: 'monaSansExtraLight';
+  font-style: normal;
+  font-weight: 200;
+  font-width: 100;
+  src: url('./Mona-Sans.woff2') format('woff2 supports variations'),
+       url('./Mona-Sans.woff2') format('woff2-variations');
+}

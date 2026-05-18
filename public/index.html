@@ -1,0 +1,286 @@
+<!DOCTYPE html> <!-- index.html -->
+<html lang="en">
+<head>
+<!--                              _           _   __  __       _
+      A           _ __  _ __ ___ (_) ___  ___| |_|  \/  | __ _| | _____ _ __
+     ( )         | '_ \| '__/ _ \| |/ _ \/ __| __| |\/| |/ _` | |/ / _ \ '__|
+    // \\        | |_) | | | (_) | |  __/ (__| |_| |  | | (_| |   <  __/ |
+   //---\\-[]    | .__/|_|  \___// |\___|\___|\__|_|  |_|\__,_|_|\_\___|_|
+ //       \\     |_|           |__/
+/           \    projectMaker: create new projects from a template
+-->
+  <meta charset="utf-8" />
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+  <title>projectMaker</title>
+  <meta name="description"                  content="projectMaker"/>
+  <meta name="mobile-web-app-capable"       content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="msapplication-tap-highlight"  content="no"  />
+  <meta name="description"                  content="projectMaker"/>
+  <meta name="theme-color"                  content="#EFF4FF"/>
+  <meta property="og:title"                 content="projectMaker"/>
+  <meta property="og:description"           content="projectMaker"/>
+  <meta property="og:image"                 content="./assets/images/logo.png"/>
+  <meta property="og:url"                   content="www.projectMaker.com"/>
+
+  <link rel="apple-touch-icon" href="./assets/images/logo.png"/>
+  <link rel="icon"             href="./assets/images/logo.png"/>
+  <link rel="stylesheet"       href="./assets/fonts/monaSans/monaSans.css"/>
+  <link rel="stylesheet"       href="./index.css"/>
+</head>
+
+<body>
+  <div class=top>
+    <div class=topLeft>
+      <div class=titleLogoContainer>
+        <img class=titleLogo src=./assets/images/logo.png alt=logo />
+      </div>
+      <div class=titleTextContainer>
+        <div class=titleText>
+          projectMaker <span class=titleVersion>v 1.0.0</span>
+        </div>
+        <div class=subTitle>create new projects quickly and easily</div>
+      </div>
+    </div>
+    <div class=topRight>
+      <a class=blueButton
+         href=https://github.com/rg3h/projectMaker/archive/refs/heads/main.zip
+         download>Download</a>
+    </div>
+  </div>
+
+  <div class=middleTopCap></div>
+
+  <div class=middle>
+    <div class=middleInner>
+      <h2>Description</h2>
+
+      <p>
+
+      projectMaker is a command-line function that creates new
+      projects quickly and easily. It copies a selected template and
+      replaces all {{<i>varName</i>}} strings with the values you
+      provide. This is similar to
+      <a href=https://en.wikipedia.org/wiki/Mustache_(template_system)>mustasche</a>
+      or <a href=https://handlebarsjs.com>handlebars</a>. projectMaker
+      is written in node.js javascript.
+      </p>
+
+      <p>
+      As an example, you might create a project template with several
+      html files that reference the name of the project. You then put a
+      {{projectTitle}} string in each of them. Later you can use
+      projectMaker to create new projects, telling it to replace the
+      {{projectTitle}} with the new project name.
+      </p>
+      <p>
+      projectMaker is simple, quick, and easy to use. Since the code
+      is written in javascript, it is easy to inspect and extend.
+      </p>
+
+      <h3>Templates</h3>
+
+      <p>
+      A project template is just a directory stored on
+      github containing files with special strings in them. These
+      strings are denoted by "{{"  <i>varName</i> "}}" &nbsp;&nbsp; for
+      example {{projectName}} or {{authorList}}
+      </p>
+
+      <p>
+      For each unique {{variable}} string projectMaker asks you for a
+      replacement value. By default, projectMaker uses the template:
+
+      <div style="margin: 1rem 0 1rem 0; text-align:center; width:100%">
+      <a href=https://github.com/rg3h/templateWebApp>https://github.com/rg3h/templateWebApp</a>
+      </div>
+
+      I use this template to create a new web app quickly (it even
+      comes with a local server).
+      </p>
+
+      <h3>projectMaker Steps</h3>
+
+      <p>
+      projectMaker does the following:
+      <ol>
+        <li>
+          asks for the new project directory name (defaulting
+          to <code>newProject</code>)
+        </li>
+        <li>
+          asks for the template url (with the above as the default),
+          downloads and unzips it
+        </li>
+        <li>
+          searches through the files for {{<i>var</i>}} strings
+          and stores them in a set
+        </li>
+        <li>
+          asks for a value for each {{<i>var</i>}} and
+          replaces it everywhere in the new project
+        </li>
+        <li>
+          shows stats when done
+        </li>
+      </ol>
+      </p>
+
+      <h3>Examples</h3>
+      <div class=code>
+        projectMaker  // interactively asks for the values<br>
+        projectMaker -p myNewProject -t https://github/you/template/main.zip<br>
+        projectMaker -h // shows help<br>
+      </div>
+
+      <h3>Command Line Flags:</h3>
+      <div class=code>
+        -p | --projectDir  <i>newProjectName</i> (default: newProject))<br>
+        -h | --help        shows helpful information<br>
+        -t | --templateUrl <i>url</i>  points to a github zip holding files with {{<i>vars</i>}}<br>
+      </div>
+
+      <h2>Installing and Running projectMaker</h2>
+      <p>
+      <ol>
+        <li>go to
+          <a href=https://github.com/rg3h/projectMaker>https://github.com/rg3h/projectMaker</a>
+          and fork or download the javascript
+        <li>download <a href=https://nodejs.org>node.js</a> so you can run
+          javascript from the command line
+        <li><code>cd projectMaker/src</code> and run <code>node .</code>
+      </ol>
+      </p>
+
+      <h2>UnInstalling projectMaker</h2>
+      <p>
+      <ol>
+        <li>Just delete the projectMaker directory</li>
+        <li>optionally uninstall node.js if you no londer need it</li>
+      </ol>
+      </p>
+
+      <h2>Details on How projectMaker Works</h2>
+      <p>
+      All of the javascript code is in <code>projectMaker/src</code>
+      </p>
+
+      <p>
+      projectMaker uses node.js to run on the command line and have
+      access to the file system (for example to make the new project's
+      directory)
+      </p>
+      <p>
+      projectMaker uses one third party node.js module
+      <a href=https://github.com/thejoshwolfe/yauzl><code>yauzl</code></a>
+      (yet another unzip library for node) to unzip the github
+      template.
+      </p>
+
+      Here is the projectMaker code in <code>src/</code>
+      <div class=code>
+        config.js            -- handles configuration such as the command parameters<br><br>
+        help.js              -- shows the introduction message and the help message<br><br>
+        main.js              -- main entry point for projectMaker<br><br>
+        nodeTimer.js         -- wraps node's precision timer for stats<br><br>
+        node_modules         -- 3rd party modules (yauzl)<br><br>
+        package-lock.json    -- node's version locking mechanism<br><br>
+        package.json         -- node's packaging mechanism<br><br>
+        stats.js             -- gathers timing and file stats to display when done<br><br>
+        templateProcessor.js -- loads, unzips, and processes the template files<br><br>
+        tty.js               -- a simple way to create ascii boxes and colors<br><br>
+        util.js              -- general utility functions
+      </div>
+
+      <h2>Another Useful Tool</h2>
+
+      <p>
+      In addition to projectMaker, consider using
+      <a href=https://github.com/rg3h/gt>https://github.com/rg3h/gt</a>
+      as an easy way to manage your github projects.
+      </p>
+      <p>
+      For example, after using projectMaker to
+      make <i>myFunProject</i> you could then:
+      <ul>
+        <li><code>cd myFunProject</code></li>
+        <li>
+          <code>gt addRepo .</code> &nbsp;&nbsp;
+          add <code>myFunProject</code> to github
+        </li>
+        <li>
+          <code>gt checkInAll "updated files"</code> &nbsp;&nbsp;to
+          push all modified files to github
+        </li>
+      </ul>
+      </p>
+
+      <h2>Future Work</h2>
+      <ul>
+        <li>add a --verbose or --succinct parameter</li>
+        <li>support a .json file holding the {{var}} values</li>
+        <li>
+          add the ability to specify the question and
+          the default value for each {{var}}
+        </li>
+        <li>open the zip and see if it needs to be moved up one level
+          based on the contents</li>
+        <li>
+          consider type-checking the template vars (e.g. true/false,
+          number, string)
+        </li>
+      </ul>
+
+      <h2>References</h2>
+      <div class=refContainer>
+        <div class=refTitle>
+          <a href=https://www.richgossweiler.place>Rich Gossweiler's Resume</a>
+        </div>
+      </div>
+
+      <div class=refContainer>
+        <div class=refTitle>
+          <a href=https://stackoverflow.com/questions/63932027/how-to-unzip-to-a-folder-using-yauzl>StackOverFlow: how to unzip using yauzl</a>
+        </div>
+      </div>
+
+      <div class=refContainer>
+        <div class=refTitle>
+          <a href=https://github.com/thejoshwolfe/yauzl>yauzl:
+            unzip library for node</a>
+        </div>
+      </div>
+
+      <div class=refContainer>
+        <div class=refTitle>
+          <a href=https://github.com/rg3h/gt>gt -- a tool for easily
+          managing github repos</a>
+        </div>
+      </div>
+
+      <div class=refContainer>
+        <div class=refTitle>
+          <a href=https://github.com/rg3h/templateWebApp>
+            templateWebApp: a template for web apps</a>
+        </div>
+      </div>
+
+      <div class=refContainer>
+        <div class=refTitle>
+          <a href=https://en.wikipedia.org/wiki/Mustache_(template_system)>mustasche</a>
+        </div>
+      </div>
+
+      <div class=refContainer>
+        <div class=refTitle>
+          <a href=https://handlebarsjs.com>handlebars</a>
+        </div>
+      </div>
+
+    </div> <!-- middleInner -->
+  </div> <!-- middle -->
+  <div class=middleBottomCap></div>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html> <!-- index.html -->
+<html lang="en">
+<head>
+<!--                              _           _   __  __       _
+      A           _ __  _ __ ___ (_) ___  ___| |_|  \/  | __ _| | _____ _ __
+     ( )         | '_ \| '__/ _ \| |/ _ \/ __| __| |\/| |/ _` | |/ / _ \ '__|
+    // \\        | |_) | | | (_) | |  __/ (__| |_| |  | | (_| |   <  __/ |
+   //---\\-[]    | .__/|_|  \___// |\___|\___|\__|_|  |_|\__,_|_|\_\___|_|
+ //       \\     |_|           |__/
+/           \    projectMaker: create new projects from a template
+-->
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+  <title>projectMaker</title>
+  <meta name="description"                  content="projectMaker"/>
+  <meta name="mobile-web-app-capable"       content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="msapplication-tap-highlight"  content="no"  />
+  <meta name="description"                  content="projectMaker"/>
+  <meta name="theme-color"                  content="#EFF4FF"/>
+  <meta property="og:title"                 content="projectMaker"/>
+  <meta property="og:description"           content="projectMaker"/>
+  <meta property="og:image"                 content="./assets/images/logo.png"/>
+  <meta property="og:url"                   content="www.projectMaker.com"/>
+
+  <link rel="apple-touch-icon" href="./assets/images/logo.png"/>
+  <link rel="icon"             href="./assets/images/logo.png"/>
+  <link rel="stylesheet"       href="./assets/fonts/monaSans/monaSans.css"/>
+  <link rel="stylesheet"       href="./index2.css"/>
+</head>
+
+<body>
+  <div class=top>
+    <div class=topLeft>
+      <div class=titleLogoContainer>Logo</div>
+      <div class=titleTextContainer>
+        <div class=titleText>Title <span class=titleVersion>v 1.0.0</span></div>
+        <div class=subTitle>subTitle</div>
+      </div>
+    </div>
+    <div class=topMiddle>top middle</div>
+    <div class=topRight>
+      <a class=blueButton
+         href=https://github.com/rg3h/projectMaker/archive/refs/heads/main.zip
+         download>Download</a>
+    </div>
+  </div>
+
+  <div class=middleTopCap></div>
+
+  <div class=middle>
+    <div class=middleInner>
+      <h2>H2 for middleInner</h2>
+
+      <p>
+      projectMaker is a command-line function that creates new
+      projects quickly and easily. It copies a template of your
+      choosing and replaces all {{<i>varName</i>}} strings with the
+      values you provide. This is somewhat
+      </p>
+
+      <p>
+      As an example, you might create a project template with several
+      html files that reference the name of the project. You put a
+      placeholder {{projectTitle}} string in each of them and then use
+      projectMaker to create new projects, telling it to replace the
+      {{projectTitle}} with the new project name.  projectMaker is
+      simple, quick, and easy to use. Since it is written in
+      javascript, it is easy to inspect and extend.
+      </p>
+
+      <h3>H3 for middleInner</h3>
+      A project template is just a directory stored on
+      github containing files with special strings in them. These
+
+      <h2>H2 Another Section</h2>
+
+      Here is some text. Here is some text. Here is some text. Here is
+      some text. Here is some text. Here is some text. Here is some
+      text. Here is some text. Here is some text. Here is some
+      text. Here is some text. Here is some text. Here is some
+      text. Here is some text. Here is some text. Here is some
+      text. Here is some text. Here is some text. Here is some
+      text. Here is some text.
+
+      <div class=code>
+        This is some code<br>
+        src/<br>
+          modules/<br>
+             file01<br>
+             file02<br>
+          doc/<br>
+             README<br>
+        tools/<br>
+          runSimpleServer<br>
+          runProjectMaker<br>
+        <br>
+      </div> <!-- code -->
+
+      This is some more text.
+
+      <h2>Future Work</h2>
+      <ul>
+        <li>add a --verbose or --succinct parameter</li>
+        <li>support a .json file holding the {{var}} values</li>
+        <li>
+          add a way for the user to specify the question to ask and
+          the default value for a {{var}}
+        </li>
+        <li>open the zip and see if it needs to be moved up one level
+          based on the contents</li>
+        <li>
+          consider type-checking the vars (e.g. true/false, number, string)
+        </li>
+      </ul>
+
+      <h2>References</h2>
+      <div class=refContainer>
+        <div class=refTitle>
+          <a href=https://www.richgossweiler.place>Rich Gossweiler's Resume</a>
+        </div>
+      </div>
+
+      <div class=refContainer>
+        <div class=refTitle>
+          <a href=https://stackoverflow.com/questions/63932027/how-to-unzip-to-a-folder-using-yauzl>StackOverFlow: how to unzip using yauzl</a>
+        </div>
+      </div>
+
+      <div class=refContainer>
+        <div class=refTitle>
+          <a href=https://github.com/thejoshwolfe/yauzl>yauzl:
+            unzip library for node</a>
+        </div>
+      </div>
+
+      <div class=refContainer>
+        <div class=refTitle>
+          <a href=https://github.com/rg3h/gt>gt -- a tool for easily
+          managing github repos</a>
+        </div>
+      </div>
+
+      <div class=refContainer>
+        <div class=refTitle>
+          <a href=https://github.com/rg3h/templateWebApp>
+            templateWebApp: a template for web apps</a>
+        </div>
+      </div>
+
+      <div class=refContainer>
+        <div class=refTitle>
+          <a href=https://en.wikipedia.org/wiki/Mustache_(template_system)>mustasche</a>
+        </div>
+      </div>
+
+      <div class=refContainer>
+        <div class=refTitle>
+          <a href=https://handlebarsjs.com>handlebars</a>
+        </div>
+      </div>
+
+    </div> <!-- middleInner -->
+  </div> <!-- middle -->
+  <div class=middleBottomCap></div>
+</body>
+</html>

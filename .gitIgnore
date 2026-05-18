@@ -1,0 +1,10 @@
+# .gitignore specific to the project
+
+# ignore config information that gets updated on various runs of projectMaker
+src/projectMakerConfig.json
+
+# temporary copies of the template for testing
+myProject/
+myProjectCopy/
+newProject/
+newProjectCopy/

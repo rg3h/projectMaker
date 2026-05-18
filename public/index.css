@@ -1,0 +1,355 @@
+/** index.css **/
+/**
+      A           _ __  _ __ ___ (_) ___  ___| |_|  \/  | __ _| | _____ _ __
+     ( )         | '_ \| '__/ _ \| |/ _ \/ __| __| |\/| |/ _` | |/ / _ \ '__|
+    // \\        | |_) | | | (_) | |  __/ (__| |_| |  | | (_| |   <  __/ |
+   //---\\-[]    | .__/|_|  \___// |\___|\___|\__|_|  |_|\__,_|_|\_\___|_|
+ //       \\     |_|           |__/
+/           \    projectMaker: create new projects from a template
+**/
+
+@keyframes fadeUpAnim   {0% {opacity: 0;} 100% {opacity: 1;}}
+
+:root {
+  --border:                solid 1px rgb(200, 200, 200);
+  --borderBlue:            solid 1px var(--blue);
+  --borderTransparent:     solid 1px transparent;
+
+  --borderRadius:          1rem;
+  --borderRadiusSmall:     0.25rem;
+
+  --blue:                  rgb(170, 210, 255);
+  --lightBlue:             rgb(210, 230, 255);
+  /* max is 800px else fit */
+  --innerMiddleWidth:      min(50rem,
+    calc(100% - 1rem - env(safe-area-inset-left) - env(safe-area-inset-right)));
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+  accent-color: var(--blue);
+  background-color: black;
+  background: linear-gradient(-135deg,
+                              rgba(0, 162, 255, 1)   0%,
+                              rgba(0,  77, 121, 1)  15%,
+                              rgba(0,   0,   0, 1) 100%);
+
+  color: white;
+  font-family: monaSans;
+  height: 100%;
+  line-height: 1.7;
+  margin: 0;
+  min-height: 100%;
+  min-width: 100%;
+  padding: 0;
+  scroll-behavior: smooth;
+  text-rendering: optimizelegibility;
+  text-size-adjust: 100%;
+  width: 100%;
+}
+
+body {
+  align-items: center;
+  animation: fadeUpAnim 0.5s ease-in-out 0.25s forwards;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  height: 100%;
+  margin: 0;
+  max-height: 100%;
+  min-height: 100%;
+  min-width: 100%;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0rem 0 1rem 0;
+}
+
+/* anchor */
+a {
+  border: var(--borderTransparent);
+  border-bottom: var(--borderBlue);
+  border-radius: var(--borderRadiusSmall);
+  color: var(--blue);
+  cursor: pointer;
+  padding: 2px;
+  text-decoration: none;
+  transition-duration: 0.25s;
+  transition-property: border, color;
+  transition-timing-function: ease-in-out;
+  width: fit-content;
+}
+
+a:hover {
+  color: var(--lightBlue);
+  border: var(--borderBlue);
+}
+
+img, picture, video, canvas, svg {
+  display: block; max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+h1, h2, h3, h4 {
+  font-family: monaSansLight;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 2.0rem;
+  margin-top: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+}
+
+h2:first-child {
+  margin-top: 0;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+h4 {
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+pre {
+  display: inline;
+  font-size: 0.9rem;
+}
+
+table {
+  border-radius: var(--borderRadius);
+  border-spacing: 0; /*table can't use border-collapse border-radius together*/
+  border: var(--border);
+}
+
+td, th {
+  border: none;
+  padding: 0.25rem 1rem 0.25rem 1rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+tr {
+  border-collapse: collapse;
+}
+
+tr:nth-child(even) {
+  background-color: rgb(240, 240, 240);
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+ul {
+  margin-top: 0.5rem;
+}
+
+button, .button, .blueButton {
+  background-color: rgb(200, 200, 200);
+  border-radius: 0.5rem;
+  border: none;
+  color: black;
+  flex-grow: 0;
+  flex-shrink: 0;
+  font-size: 1rem;
+  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+  text-decoration: none;
+  transition-duration: 0.15s;
+  transition-property: background;
+  transition-timing-function: ease-in-out;
+  user-select: none;
+}
+
+button:hover, .button:hover {
+  background-color: rgb(255, 255, 255);
+  color: black;
+}
+
+.blueButton {
+  background-color: rgb(0, 75, 175);
+  box-shadow: 5px 5px 5px rgb(0, 0, 0);
+  color: white;
+}
+
+.blueButton:hover {
+  background-color: rgb(0, 90, 255);
+  border: none;
+  color: white;
+}
+
+.buttonDisabled {
+  background-color: rgb(205, 205, 205) !important;
+  border: 1px solid rgb(150, 150, 150) !important;
+  box-shadow: none  !important;
+  color: rgb(100, 100, 100)  !important;
+  pointer-events: none  !important;
+  user-select: none  !important;
+}
+
+code {
+  font-size: 0.8rem;
+}
+
+.code {
+  font-family: monospace;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  margin-left: 1rem;
+}
+
+.top {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.middle {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  width: 100%;
+  overscroll-behavior: none;   /* stops over pulling on a phone */
+}
+
+.middleTopCap, .middleBottomCap, .middleInner {
+  background: black;
+  color: white;
+  margin: 0 0.5rem 0 0.5rem;
+  width: var(--innerMiddleWidth);
+}
+
+.middleInner {
+  border-left: var(--border);
+  border-right: var(--border);
+  padding: 0.5rem 1rem 2rem 1rem;
+}
+
+.middleTopCap {
+  border-left: var(--border);
+  border-radius: 1rem 1rem 0 0;
+  border-right: var(--border);
+  border-top: var(--border);
+  height: 1rem;
+}
+
+.middleBottomCap {
+  border-bottom: var(--border);
+  border-left: var(--border);
+  border-radius: 0 0 1rem 1rem;
+  border-right: var(--border);
+  height: 1rem;
+}
+
+.topLeft {
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  gap: 1rem;
+}
+
+.topMiddle {
+  align-items: center;
+  display:flex;
+  flex-direction: row;
+  flex-grow: 1;
+  font-family: monaSansLight;
+  font-size: min(2.5rem, 4vw);
+  font-weight: 400;
+  gap: 1rem;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.topRight {
+  color: rgb(100, 100, 100);
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  font-size: 0.8rem;
+  justify-content: flex-end;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.titleLogoContainer {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.titleLogo {
+  height: 3rem;
+}
+
+.titleText {
+  align-items: top;
+  display: flex;
+  font-family: monaSansBold;
+  font-family: monaSansExtraLight;
+  font-size: min(2.5rem, 6vw);
+  line-height: min(2.5rem, 6vw);
+  margin-bottom: 0.3rem;
+}
+
+.subTitle {
+  font-family: monaSansLight;
+  font-size: min(0.9rem, 3vw);
+}
+
+.titleVersion {
+  font-family: monaSans;
+  margin-left: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.refContainer {
+  font-size: 0.85rem;
+  line-height: 2rem;
+  margin-left: 1rem;
+}
+
+/* detect narrow */
+@media screen and (max-width: 600px) {
+}
+
+/* detect phone */
+@media screen and (any-pointer: coarse) and (max-width: 900px) {
+}
+
+/* detect phone in portrait */
+@media screen and (any-pointer: coarse) and (orientation: portrait)
+    and (max-width: 400px) {
+  .middleTopCap, .middleBottomCap, .middleInner {margin: 0; padding:0;}
+  .middleTopCap, .middleBottomCap {display: none;}
+  .middleInner {border: none; width: 100%; padding: 1rem;}
+}
+
+/* detect phone in landscape */
+@media screen and (any-pointer: coarse) and (orientation: landscape)
+    and (max-width: 900px) {
+  body {padding-bottom: 0;}
+}

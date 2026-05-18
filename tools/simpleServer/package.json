@@ -1,0 +1,9 @@
+{
+  "author": "",
+  "description": "simple node http and https server",
+  "license": "MIT",
+  "main": "simpleServer.js",
+  "name": "simpleServer",
+  "scripts": { "test": "echo \"Error: no test specified\" && exit 1" },
+  "version": "3.1.0"
+}
