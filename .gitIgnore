@@ -12,3 +12,4 @@ newProjectCopy/
 # override global .gitignore to include these directories
 !node_modules
 !aaa_notForProject
+!aaa_notForProject/notes.txt
