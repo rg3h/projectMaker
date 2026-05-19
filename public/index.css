@@ -133,6 +133,8 @@ h4 {
 pre {
   display: inline;
   font-size: 0.9rem;
+  overflow-wrap: break-word;  /* breaks long words preventing x-overflow */
+  white-space:pre-wrap;       /* preserves whitespace and wraps naturally */
 }
 
 table {
