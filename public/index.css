@@ -207,7 +207,8 @@ button:hover, .button:hover {
 }
 
 code {
-  font-size: 0.8rem;
+  margin-left: 1rem;
+  font-size: 0.9rem;
 }
 
 .code {

@@ -58,47 +58,59 @@
       <h2>Description</h2>
 
       <p>
-
-      projectMaker is a command-line function that creates new
-      projects quickly and easily. It copies a selected template and
+      projectMaker is a command-line tool that creates new projects
+      quickly and easily.
+      <br><br>
+      <code>&gt; projectMaker </code> &nbsp;&nbsp;(fully interactive)
+      <br>
+      or
+      <br>
+      <code>&gt; projectMaker -p newProject -t someTemplate.zip</code><br>
+      <br>
+      projectMaker copies a template and
       replaces all {{<i>varName</i>}} strings with the values you
       provide. This is similar to
       <a href=https://en.wikipedia.org/wiki/Mustache_(template_system)>mustasche</a>
       or <a href=https://handlebarsjs.com>handlebars</a>. projectMaker
-      is written in node.js javascript.
-      </p>
-
-      <p>
-      As an example, you might create a project template with several
-      html files that reference the name of the project. You then put a
-      {{projectTitle}} string in each of them. Later you can use
-      projectMaker to create new projects, telling it to replace the
-      {{projectTitle}} with the new project name.
-      </p>
-      <p>
-      projectMaker is simple, quick, and easy to use. Since the code
-      is written in javascript, it is easy to inspect and extend.
+      is written in javascript and uses node to run from the
+      command-line, making projectMaker easy to inspect, modify, and extend.
       </p>
 
       <h3>Templates</h3>
 
       <p>
-      A project template is just a directory stored on
-      github containing files with special strings in them. These
-      strings are denoted by "{{"  <i>varName</i> "}}" &nbsp;&nbsp; for
-      example {{projectName}} or {{authorList}}
+      A template is just a directory stored on github containing files
+      with strings denoted by "{{" <i>varName</i> "}}" &nbsp;&nbsp;
+      <br>
+      For example:<br>
+      You might create a project template with several
+      html files that reference the title of the project:
+      <br>
+      <pre>
+  &lt;div class=topBar&gt;
+    &lt;div class=projectTitle&gt;{{projectTitle}}&lt;/div&gt;
+    &lt;div class=authors&gt;{{authorList}}&lt;/div&gt;
+  &lt;/div&gt;
+      </pre>
+      <br>
+      Then you can use projectMaker to create new projects from this
+      template, replacing the {{projectTitle}} with the new project title.
       </p>
 
       <p>
-      For each unique {{variable}} string projectMaker asks you for a
-      replacement value. By default, projectMaker uses the template:
+      By default, projectMaker uses the template:
 
+<!--
       <div style="margin: 1rem 0 1rem 0; text-align:center; width:100%">
+-->
       <a href=https://github.com/rg3h/templateWebApp>https://github.com/rg3h/templateWebApp</a>
+      <br>
+<!--
       </div>
+-->
 
-      I use this template to create a new web app quickly (it even
-      comes with a local server).
+      I use this template to create a new web app quickly (the
+      template even comes with a local server).
       </p>
 
       <h3>projectMaker Steps</h3>
@@ -111,8 +123,11 @@
           to <code>newProject</code>)
         </li>
         <li>
-          asks for the template url (with the above as the default),
-          downloads and unzips it
+          asks for the template url with the above as the default
+        </li>
+        <li>
+          downloads and unzips the template and moves the nested
+          directory up one level
         </li>
         <li>
           searches through the files for {{<i>var</i>}} strings
@@ -128,31 +143,41 @@
       </ol>
       </p>
 
-      <h3>Examples</h3>
-      <div class=code>
-        projectMaker  // interactively asks for the values<br>
-        projectMaker -p myNewProject -t https://github/you/template/main.zip<br>
-        projectMaker -h // shows help<br>
-      </div>
-
       <h3>Command Line Flags:</h3>
       <div class=code>
-        -p | --projectDir  <i>newProjectName</i> (default: newProject))<br>
         -h | --help        shows helpful information<br>
+        -p | --projectDir  <i>newProjectName</i> (default: newProject))<br>
         -t | --templateUrl <i>url</i>  points to a github zip holding files with {{<i>vars</i>}}<br>
       </div>
 
       <h2>Installing and Running projectMaker</h2>
       <p>
       <ol>
+        <li>download <a href=https://nodejs.org>node.js</a> so you can run
+          javascript from the command line</li>
         <li>go to
           <a href=https://github.com/rg3h/projectMaker>https://github.com/rg3h/projectMaker</a>
-          and fork or download the javascript
-        <li>download <a href=https://nodejs.org>node.js</a> so you can run
-          javascript from the command line
-        <li><code>cd projectMaker/src</code> and run <code>node .</code>
+          and fork or download the zip file</li>
+        <li>unzip it into some directory (e.g. <code>projectMaker</code></li>
+        <li>cd projectMaker/src and run: node .</li>
       </ol>
       </p>
+      <h3>Windows Bonus</h3>
+      For Windows, you can make projectMaker run from any shell by
+      doing the following:
+      <br>
+      Le't say you have a directory that is in the executable
+      path (e.g. Program Files or C:\rg3h\bin\). And let's say you
+      downloaded and uzipped projectMaker from github into
+      C:\rg3h\downloads\projectMaker
+      <ol>
+        <li>cd C:\rg3h\bin &nbsp;&nbsp; (a dir your executable path)</li>
+        <li>makedir projectMaker</li>
+        <li>cd C:\rg3h\bin\projectMaker</li>
+        <li>copy C:\rg3h\downloads\projectMaker\src .</li>
+        <li>copy C:\rg3h\downloads\projectMaker\tools\windows\putMeInExePathAs_projectMaker.bat projectMaker.bat</li>
+      </ol>
+      now you should be able to run projectMaker from any shell
 
       <h2>UnInstalling projectMaker</h2>
       <p>
@@ -168,14 +193,13 @@
       </p>
 
       <p>
-      projectMaker uses node.js to run on the command line and have
-      access to the file system (for example to make the new project's
-      directory)
+      projectMaker uses node.js to run on the command line and be able
+      to make the new project's directory
       </p>
       <p>
-      projectMaker uses one third party node.js module
-      <a href=https://github.com/thejoshwolfe/yauzl><code>yauzl</code></a>
-      (yet another unzip library for node) to unzip the github
+      projectMaker uses only one third party node.js module
+      <a href=https://github.com/thejoshwolfe/yauzl>yauzl</a>
+      (yet another unzip library) to unzip the github
       template.
       </p>
 
@@ -190,7 +214,7 @@
         package.json         -- node's packaging mechanism<br><br>
         stats.js             -- gathers timing and file stats to display when done<br><br>
         templateProcessor.js -- loads, unzips, and processes the template files<br><br>
-        tty.js               -- a simple way to create ascii boxes and colors<br><br>
+        tty.js               -- create ascii boxes and colors in the shell<br><br>
         util.js              -- general utility functions
       </div>
 
@@ -206,12 +230,9 @@
       make <i>myFunProject</i> you could then:
       <ul>
         <li><code>cd myFunProject</code></li>
+        <li><code>gt addRepo .</code> &nbsp;&nbsp;</li>
         <li>
-          <code>gt addRepo .</code> &nbsp;&nbsp;
-          add <code>myFunProject</code> to github
-        </li>
-        <li>
-          <code>gt checkInAll "updated files"</code> &nbsp;&nbsp;to
+          <code>gt checkInAll "initial check-in"</code> &nbsp;&nbsp;to
           push all modified files to github
         </li>
       </ul>
@@ -219,6 +240,7 @@
 
       <h2>Future Work</h2>
       <ul>
+        <li>change the name to makeProject</li>
         <li>add a --verbose or --succinct parameter</li>
         <li>support a .json file holding the {{var}} values</li>
         <li>
