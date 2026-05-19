@@ -9,5 +9,6 @@ myProjectCopy/
 newProject/
 newProjectCopy/
 
-# override global .gitignore and include node_modules
+# override global .gitignore to include these directories
 !node_modules
+!aaa_notForProject
