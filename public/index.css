@@ -346,6 +346,8 @@ code {
 /* detect phone in portrait */
 @media screen and (any-pointer: coarse) and (orientation: portrait)
     and (max-width: 400px) {
+  body { background: black;}
+  .top {border-bottom: solid 1px white;}
   .middleTopCap, .middleBottomCap, .middleInner {margin: 0; padding:0;}
   .middleTopCap, .middleBottomCap {display: none;}
   .middleInner {border: none; width: 100%; padding: 1rem;}
