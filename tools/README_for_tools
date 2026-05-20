@@ -1,7 +1,6 @@
 README_for_tools
 ================
 
-the tools/ directory is not necessary for projMaker.
 You just need the src/ directory to use projMaker.
 
 The tools/ directory holds development tools like a simple web server

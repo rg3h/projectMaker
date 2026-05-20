@@ -1,4 +1,4 @@
-:: @fileoverview runProjectMaker.bat runs a node script that creates a project
+:: @fileoverview projectMaker.bat runs a node script that creates a project
 @echo off
 setlocal
 :: %~d0  is the drive
