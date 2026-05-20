@@ -10,15 +10,13 @@ projectMaker
 /           \    projectMaker: create new projects from a template
 -->
 ----------------------------------------------------------------------
-update docs to explain how to install:
-  download zip and put in exe path: src/ tools/windows/putMeInAsprojectMaker.bat
-  rename to makeProject.bat
-
 fix simpleServer.bat to run on double-click
 code walk
 clear out aaa_notForProject (archive?)
 ----------------------------------------------------------------------
 V2.0:
+  wrap yauzl
+  rename projectMakerConfig.json
   on version out of date, offer to pull the latest version
   debug -- if(debug) on commented //console.log()
   add --succinct  (no text output)
