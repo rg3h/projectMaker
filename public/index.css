@@ -234,8 +234,8 @@ code {
   display: flex;
   flex-direction: column;
   overflow: auto;
-  width: 100%;
   overscroll-behavior: none;   /* stops over pulling on a phone */
+  width: 100%;
 }
 
 .middleTopCap, .middleBottomCap, .middleInner {

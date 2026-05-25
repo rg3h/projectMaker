@@ -1,7 +1,7 @@
 // @fileoverview help.js shows helpful information about projectMaker
 import * as tty from './tty.js';
 
-export {getPlug, showHelp, showIntro}
+export {getPlug, showHelp, showIntro, showVersion}
 
 
 // returns a string suggesting the use of gt to make github easier
@@ -47,6 +47,10 @@ that repo as the template.
 
   tty.box(msg);
   console.log('');
+}
+
+function showVersion(config) {
+  console.log(config.getProjectMakerVersion());
 }
 
 

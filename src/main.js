@@ -25,6 +25,11 @@ async function main() {
     return;
   }
 
+  if (config.get('showVersion')) {
+    help.showVersion(config);
+    return;
+  }
+
   help.showIntro(config);
 
   // ask for the new project directory name and template to use

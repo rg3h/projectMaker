@@ -10,7 +10,6 @@ projectMaker
 /           \    projectMaker: create new projects from a template
 -->
 ----------------------------------------------------------------------
-fix simpleServer.bat to run on double-click
 code walk
 clear out aaa_notForProject (archive?)
 ----------------------------------------------------------------------

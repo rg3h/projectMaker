@@ -14,7 +14,7 @@ import {ask, getUrlContent, sleep}        from './util.js';
 export {Config}
 
 class Config {
-  static PROJECT_MAKER_VERSION = '1.0.0';
+  static PROJECT_MAKER_VERSION = '1.0.1';
   static __dirname = import.meta.dirname;
   static CONFIG_FILE = path.join(Config.__dirname, 'projectMakerConfig.json');
 
@@ -31,6 +31,7 @@ class Config {
       debug: false,
       githubVersion: null,
       help: false,
+      showVersion: false,
       interactive: true,
       templateVars: {},     // this holds all of the template {{vars}}
       projectMakerVersion: Config.PROJECT_MAKER_VERSION,
@@ -254,6 +255,7 @@ class Config {
     const STRING           = 'string';
     let defaultDebug       = this.get('debug');
     let defaultHelp        = this.get('help');
+    let defaultShowVersion = this.get('showVersion');
     let templateVars       = this.get('templateVars');
     let defaultProjectDir  = templateVars.projectDir;
     let defaultTemplateUrl = templateVars.templateUrl;
@@ -262,6 +264,7 @@ class Config {
       debug:       {type:BOOLEAN,            default:defaultDebug},
       projectDir:  {type:STRING,  short:'p', default:defaultProjectDir},
       help:        {type:BOOLEAN, short:'h', default:defaultHelp},
+      showVersion: {type:BOOLEAN, short:'v', default:defaultShowVersion},
       templateUrl: {type:STRING,  short:'t', default:defaultTemplateUrl},
     };
 
@@ -275,6 +278,7 @@ class Config {
 
     this.#settings.debug = values.debug;
     this.#settings.help = values.help;
+    this.#settings.showVersion = values.showVersion;
     this.#settings.templateVars.projectDir = values.projectDir;
     this.#settings.templateVars.templateUrl= values.templateUrl;
 
