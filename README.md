@@ -1,7 +1,7 @@
 <table align=center>
  <tr><td align=center width=300>
    <b>projectMaker</b><br>
-   <sup>version 1.0.0</sup>
+   <sup>version 1.0.1</sup>
   </td></tr>
     <tr><td align=center>
     <img src="./public/assets/images/logoGrey.png"/>
@@ -21,7 +21,7 @@
    <a href="https://rg3h.github.io/projectMaker/index.html">
      <img src="./public/assets/images/learnMoreButton.png"/>
    </a>
-   
+
    <a href="https://github.com/rg3h/projectMaker/archive/refs/heads/main.zip">
      <img align=right src="./public/assets/images/downloadButton.png"/>
    </a>
