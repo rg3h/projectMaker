@@ -10,10 +10,18 @@ projectMaker
 /           \    projectMaker: create new projects from a template
 -->
 ----------------------------------------------------------------------
+template and json {{varName,default,question}}
 code walk
 clear out aaa_notForProject (archive?)
 ----------------------------------------------------------------------
 V2.0:
+  take a command line arg projectMaker foo creates a new project called foo
+  change to makeProj (mp.config mp.hints)
+  fetchGithubAndUnzip, getTemplateVars
+  point out tools/getTemplateVars
+  add hints file to templates/webTemplateApp
+  add hints with each {{}} replacement (e.g. projectUrl -> github/rg3h/..)
+  tool to compare local and remote version numbers (README)
   wrap yauzl
   rename projectMakerConfig.json
   on version out of date, offer to pull the latest version

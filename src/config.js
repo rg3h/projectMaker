@@ -269,17 +269,20 @@ class Config {
     };
 
     let values = null;
+    let nonFlagParamArray = [];
     try {
-      let parseObj = parseArgs({options});
+      let parseObj = parseArgs({options, allowPositionals: true});
       values = parseObj.values;
+      nonFlagParamArray = parseObj.positionals || [];
     } catch(err) {
       return `error: ${err.message}`;
     }
 
+    let newProjectDir = values.projectDir || nonFlagParamArray[0] || null;
     this.#settings.debug = values.debug;
     this.#settings.help = values.help;
     this.#settings.showVersion = values.showVersion;
-    this.#settings.templateVars.projectDir = values.projectDir;
+    this.#settings.templateVars.projectDir = newProjectDir; //values.projectDir;
     this.#settings.templateVars.templateUrl= values.templateUrl;
 
     return null;
